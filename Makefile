@@ -12,7 +12,7 @@ LFLAGS   = -W -Wall -I. -I$(INCDIR) -lm
 
 all: $(BINDIR)/compte
 
-$(BINDIR)/compte: $(OBJDIR)/main.o $(OBJDIR)/compte.o
+$(BINDIR)/compte: $(OBJDIR)/main.o $(OBJDIR)/compte.o $(OBJDIR)/comptecheque.o
 	$(CC) $(LFLAGS) $^ -o $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp

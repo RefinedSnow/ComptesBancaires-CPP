@@ -4,35 +4,36 @@
 #include "compte.h"
 using namespace std;
 
-Compte::Compte(int num, string nom){
-	numCompte = num;
-	nomTitulaire = nom;
-	solde = 0;
+Compte::Compte(int num, string nom) : Compte(num,nom,0) {
+	cout << "+++Compte(numCompte,nomTitulaire) : " << num << "," << nom;
 }
+
 Compte::Compte(int num, string nom, double montant){
+	if(montant < 0){
+		throw "Creation de compte avec solde negatif non autorise";
+	}
 	numCompte = num;
 	nomTitulaire = nom;
 	solde = montant;
+	cout << "+++Compte(numCompte,nomTitulaire,solde) : " << num << "," << nom << "," << montant;
 }
 
-bool Compte::depot(double montant){
-	if(montant > 0){
-		solde += montant;
-		cout << "Compte no : " << numCompte << " depot : " << montant << endl;
-		cout << "Nouveau solde : " << solde << endl;
-		return true;
+void Compte::depot(double montant){
+	if(montant <= 0){
+		throw "Montant de depot nul ou negatif, montant positif attendu";
 	}
-	return false;
+	solde += montant;
+	cout << "Compte no : " << numCompte << " depot : " << montant << endl;
+	cout << "Nouveau solde : " << solde << endl;
 }
 
-bool Compte::retrait(double montant){
-	if(montant > 0){
-		solde -= montant;
-		cout << "Compte no : " << numCompte << " retrait : " << montant << endl;
-		cout << "Nouveau solde : " << solde << endl;
-		return true;
+void Compte::retrait(double montant){
+	if(montant <= 0){
+		throw "Montant de retrait nul ou negatif, montant positif attendu";
 	}
-	return false;
+	solde -= montant;
+	cout << "Compte no : " << numCompte << " retrait : " << montant << endl;
+	cout << "Nouveau solde : " << solde << endl;
 }
 
 int Compte::getNumCompte() const{
