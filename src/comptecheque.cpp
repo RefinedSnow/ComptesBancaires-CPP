@@ -29,7 +29,7 @@ void CompteCheque::retrait(double montant){
 		throw "Operation non autorisee, decouvert depasse";
 	}
 	solde -= montant;
-	cout << "Compte no : " << numCompte << " retrait : " << montant << endl;
+	cout << "Compte cheque no : " << numCompte << " retrait : " << montant << endl;
 	cout << "Nouveau solde : " << solde << endl;
 }
 

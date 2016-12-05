@@ -16,7 +16,11 @@ class Livret : public Compte{
 	public:
 	Livret(int numCompte, string nomTitulaire, double tauxInteret);
 	Livret(int numCompte, string nomTitulaire, double solde, double tauxInteret);
+
 	double getTauxInteret() const;
+	double getSoldeMinimum() const;
 	void retrait(double montant);
+
+	double versementInteret();
 };
 #endif
