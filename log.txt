@@ -1,0 +1,4 @@
+"Compile src/main.cpp OK"
+Makefile:19: recipe for target 'obj/compte.o' failed
+"Compile src/compte.cpp OK"
+g++ -fno-elide-constructors -W -Wall -I. -Iinclude -lm obj/main.o obj/compte.o -o bin/compte
