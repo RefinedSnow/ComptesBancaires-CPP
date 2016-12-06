@@ -10,9 +10,15 @@ Moneo::Moneo(CompteCheque &compte, double soldeMax) : Moneo(compte,soldeMax,0){
 }
 
 Moneo::Moneo(CompteCheque &compte, double max, double montant) : compteCheque(compte){
-	compteCheque = compte;
+	if(montant > max){
+		throw "Creation de moneo impossible, montant superieur au solde max";
+	}
+	if(montant < 0 ||soldeMax <= 0){
+		throw "Creation de moneo impossible, montant negatif";	
+	}
 	solde = montant;
-	soldeMax = max;
+	compteCheque = compte;
+	soldeMax = max;	
 }
 
 void Moneo::retrait(double montant){
@@ -33,7 +39,12 @@ void Moneo::recharge(){
 		throw "Moneo : recharge impossible la carte est pleine";
 	}
 	compteCheque.retrait(soldeMax-solde);
-	solde = soldeMax;
 	cout << "Moneo du compte no : " << compteCheque.getNumCompte() << " recharge  : " << soldeMax-solde << endl;
+	solde = soldeMax;
 	cout << "Nouveau solde : " << solde << endl;
+}
+ostream& operator<<(ostream &strm, const Moneo& m) {
+	strm << "Moneo de " << m.compteCheque.getNomTitulaire() <<" solde max : " << m.soldeMax;
+	strm << " solde : " << m.solde;
+	return strm << endl;
 }

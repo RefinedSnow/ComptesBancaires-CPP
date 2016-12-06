@@ -20,5 +20,6 @@ class Moneo{
 
 	virtual void retrait(double montant);
 	void recharge();
+	friend ostream& operator<<(ostream &strm, const Moneo& m);
 };
 #endif

@@ -25,7 +25,7 @@ void Livret::retrait(double montant){
 		throw "Montant de retrait nul ou negatif, montant positif attendu";
 	}
 	if(condition){
-		throw "Operation non autorisee, montant du retrait superieur au sold ";
+		throw "Operation non autorisee, montant du retrait superieur au solde ";
 	}
 	solde -= montant;
 	cout << "Livret no : " << numCompte << " retrait : " << montant << endl;
