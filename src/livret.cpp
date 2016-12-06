@@ -1,17 +1,15 @@
 #include <string>
 #include <ostream>
 #include <iostream>
-
-#include "compte.h"
 #include "livret.h"
 using namespace std;
 
 Livret::Livret(int num, string nom, double taux) : Livret(num,nom,0,taux){
-	cout << "+++Livret(numCompte, nomTitulaire, tauxInteret)" << endl;
+	//cout << "+++Livret(numCompte, nomTitulaire, tauxInteret)" << endl;
 }
 Livret::Livret(int num, string nom, double montant, double taux) : Compte(num,nom,montant){
-	cout << "+++Livret(numCompte, nomTitulaire, solde, tauxInteret)" << endl;
-	cout << num << ", " << nom << ", " << montant << ", " << taux << endl;
+	//cout << "+++Livret(numCompte, nomTitulaire, solde, tauxInteret)" << endl;
+	//cout << num << ", " << nom << ", " << montant << ", " << taux << endl;
 	tauxInteret = taux;
 	soldeMinimum = montant;
 }

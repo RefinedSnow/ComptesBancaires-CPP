@@ -17,7 +17,8 @@ class CompteCheque : public Compte{
 	CompteCheque(int numCompte, string nomTitulaire, double solde);
 	CompteCheque(int numCompte, string nomTitulaire, double solde, double decouvert);
 	double getDecouvert() const;
-	void retrait(double montant);
+	virtual void retrait(double montant);
 	void setDecouvert(double montant);
+	friend ostream& operator<<(ostream &strm, const CompteCheque& c);
 };
 #endif

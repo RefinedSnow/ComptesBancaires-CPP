@@ -1,9 +1,11 @@
 #include <string>
 #include <ostream>
 #include <iostream>
+
 #include "pel.h"
 
 using namespace std;
+double Pel::tauxInteret = 0;
 
 Pel::Pel(int num, string nom) : Pel(num,nom,0){
 
@@ -24,7 +26,7 @@ double Pel::versementInteret(){
 	return interets;
 }
 
-double Pel::setTauxInteret(double taux){
+void Pel::setTauxInteret(double taux){
 	Pel::tauxInteret = taux;
 }
 

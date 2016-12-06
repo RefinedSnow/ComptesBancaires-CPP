@@ -19,8 +19,8 @@ class Livret : public Compte{
 
 	double getTauxInteret() const;
 	double getSoldeMinimum() const;
-	void retrait(double montant);
+	virtual void retrait(double montant);
 
-	double versementInteret();
+	virtual double versementInteret();
 };
 #endif

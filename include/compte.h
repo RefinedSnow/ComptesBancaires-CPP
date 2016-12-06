@@ -17,8 +17,9 @@ class Compte{
 	Compte(int numCompte, string nomTitulaire);
 	Compte(int numCompte, string nomTitulaire, double solde);
 
-	void depot(double montant);
-	void retrait(double montant);
+	virtual void depot(double montant);
+	virtual void retrait(double montant);
+	void virement(Compte compte, double montant);
 
 	int getNumCompte() const;
 	string getNomTitulaire() const;

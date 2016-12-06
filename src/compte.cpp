@@ -5,7 +5,7 @@
 using namespace std;
 
 Compte::Compte(int num, string nom) : Compte(num,nom,0) {
-	cout << "+++Compte(numCompte,nomTitulaire) : " << num << "," << nom;
+	//cout << "+++Compte(numCompte,nomTitulaire) : " << num << "," << nom;
 }
 
 Compte::Compte(int num, string nom, double montant){
@@ -15,7 +15,7 @@ Compte::Compte(int num, string nom, double montant){
 	numCompte = num;
 	nomTitulaire = nom;
 	solde = montant;
-	cout << "+++Compte(numCompte,nomTitulaire,solde) : " << num << "," << nom << "," << montant;
+	//cout << "+++Compte(numCompte,nomTitulaire,solde) : " << num << "," << nom << "," << montant;
 }
 
 void Compte::depot(double montant){
@@ -34,6 +34,12 @@ void Compte::retrait(double montant){
 	solde -= montant;
 	cout << "Compte no : " << numCompte << " retrait : " << montant << endl;
 	cout << "Nouveau solde : " << solde << endl;
+}
+
+void Compte::virement(Compte compte, double montant){
+	retrait(montant);
+	compte.depot(montant);
+	cout << "Virement de  : " << numCompte << " vers : " << compte.numCompte << endl;
 }
 
 int Compte::getNumCompte() const{

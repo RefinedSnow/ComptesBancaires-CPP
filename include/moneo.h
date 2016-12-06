@@ -12,13 +12,13 @@ class Moneo{
 	private:
 	double solde;
 	double soldeMax;
-	CompteCheque compteCheque;
+	CompteCheque &compteCheque;
 
 	public:
-	Moneo(CompteCheque compteCheque, double soldeMax);
-	Moneo(CompteCheque compteCheque, double soldeMax, double solde);
+	Moneo(CompteCheque &compteCheque, double soldeMax);
+	Moneo(CompteCheque &compteCheque, double soldeMax, double solde);
 
-	void retrait(double montant);
+	virtual void retrait(double montant);
 	void recharge();
 };
 #endif

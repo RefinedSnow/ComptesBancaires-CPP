@@ -4,12 +4,13 @@
 #include <string>
 #include <ostream>
 #include <iostream>
+
 #include "livret.h"
 
 using namespace std;
 
 class Pel : public Livret{
-	private:
+	protected:
 	static double tauxInteret;
 
 	public:
@@ -17,9 +18,9 @@ class Pel : public Livret{
 	Pel(int numCompte, string nomTitulaire, double solde);
 
 
-	void retrait(double montant);
+	virtual void retrait(double montant);
 	static double getTauxInteret();
-	double versementInteret();
-	static double setTauxInteret(double tauxInteret);
+	virtual double versementInteret();
+	static void setTauxInteret(double tauxInteret);
 };
 #endif

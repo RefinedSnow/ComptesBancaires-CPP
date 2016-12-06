@@ -6,18 +6,18 @@
 using namespace std;
 
 CompteCheque::CompteCheque(int numCompte, string nomTitulaire) : CompteCheque(numCompte,nomTitulaire,0,0){
-	cout << "+++CompteCheque(numCompte, nomTitulaire)" << endl;
+	//cout << "+++CompteCheque(numCompte, nomTitulaire)" << endl;
 }
 CompteCheque::CompteCheque(int numCompte, string nomTitulaire, double solde) : CompteCheque(numCompte,nomTitulaire,solde,0){
-	cout << "+++CompteCheque(numCompte, nomTitulaire, solde)" << endl;
+	//cout << "+++CompteCheque(numCompte, nomTitulaire, solde)" << endl;
 }
 CompteCheque::CompteCheque(int numCompte, string nomTitulaire, double solde, double montant) : Compte(numCompte,nomTitulaire,solde){
 	if(montant < 0){
 		throw "Montant de decouvert negatif, montant nul ou positif attendu";
 	}
 	decouvert = montant;
-	cout << "+++CompteCheque(numCompte, nomTitulaire, solde, decouvert) : " << endl;
-	cout << numCompte << ", " << nomTitulaire << ", " << solde << ", " << montant << endl;
+	//cout << "+++CompteCheque(numCompte, nomTitulaire, solde, decouvert) : " << endl;
+	//cout << numCompte << ", " << nomTitulaire << ", " << solde << ", " << montant << endl;
 }
 
 void CompteCheque::retrait(double montant){
@@ -43,4 +43,9 @@ void CompteCheque::setDecouvert(double montant){
 	else{
 		throw "Montant de decouvert negatif, montant nul ou positif attendu";
 	}
+}
+ostream& operator<<(ostream &strm, const CompteCheque& c) {
+	strm << "Compte cheque numero : " << c.getNumCompte() << " Titulaire : " << c.getNomTitulaire() << " Solde : " << c.getSolde();
+	strm << endl << " Decouvert autorise : " << c.getDecouvert();
+    return strm << endl;
 }
