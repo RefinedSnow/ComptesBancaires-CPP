@@ -13,8 +13,8 @@ class Pel : public Livret{
 	static double tauxInteret;
 
 	public:
-	Pel(int numCompte, string nomTitulaire, double tauxInteret);
-	Pel(int numCompte, string nomTitulaire, double solde, double tauxInteret);
+	Pel(int numCompte, string nomTitulaire);
+	Pel(int numCompte, string nomTitulaire, double solde);
 
 
 	void retrait(double montant);
