@@ -9,7 +9,7 @@
 using namespace std;
 
 class Livret : public Compte{
-	private:
+	protected:
 	double tauxInteret;
 	double soldeMinimum;
 
