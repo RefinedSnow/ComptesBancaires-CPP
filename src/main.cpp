@@ -4,6 +4,8 @@
 #include "compte.h"
 #include "comptecheque.h"
 #include "livret.h"
+#include "pel.h"
+#include "moneo.h"
 using namespace std;
 int main(){
 	try{

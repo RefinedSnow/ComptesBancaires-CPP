@@ -9,7 +9,7 @@
 using namespace std;
 
 class CompteCheque : public Compte{
-	private:
+	protected:
 	double decouvert;
 
 	public:
