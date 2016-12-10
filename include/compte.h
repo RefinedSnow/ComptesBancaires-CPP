@@ -19,7 +19,7 @@ class Compte{
 
 	virtual void depot(double montant);
 	virtual void retrait(double montant);
-	void virement(Compte compte, double montant);
+	virtual void virement(Compte& compte, double montant);
 
 	int getNumCompte() const;
 	string getNomTitulaire() const;

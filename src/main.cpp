@@ -73,6 +73,7 @@ int main(){
 	Pel samanta(112,"Samanta");
 	cout << samanta;
 	samanta.depot(500);
+	cout << samanta;
 	Pel barbara(2,"Barbara",10000);
 	cout << barbara;
 	cout << "interet = " << barbara.getTauxInteret() << "%"<<endl;
@@ -112,5 +113,11 @@ int main(){
 		cout << "Exception : " << ex << endl;
 	}
 	//Virement
+	cout << endl << "###Virement###"<< endl;
+	cout << bernardino;
+	cout << antonio;
+	bernardino.virement(antonio,50);
+	cout << bernardino;
+	cout << antonio;
 	return 0;
 }

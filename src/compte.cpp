@@ -36,7 +36,7 @@ void Compte::retrait(double montant){
 	cout << "Nouveau solde : " << solde << endl;
 }
 
-void Compte::virement(Compte compte, double montant){
+void Compte::virement(Compte& compte, double montant){
 	retrait(montant);
 	compte.depot(montant);
 	cout << "Virement de  : " << numCompte << " vers : " << compte.numCompte << endl;
