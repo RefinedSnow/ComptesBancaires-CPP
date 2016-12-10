@@ -1,0 +1,84 @@
+
+***Comptes cheques***
+Compte cheque numero : 1 Titulaire : Claudine Solde : 0
+ Decouvert autorise : 0
+Compte cheque numero : 12 Titulaire : Antonio Solde : 500
+ Decouvert autorise : 0
+Compte cheque numero : 13 Titulaire : Bernardino Solde : 800
+ Decouvert autorise : 300
+creation avec montant = -6
+Exception : Creation de compte avec solde negatif non autorise
+Compte cheque no : 13 retrait : 1100
+Nouveau solde : -300
+retrait 10 cts
+Exception : Operation non autorisee, decouvert depasse
+retrait -100 euro
+Exception : Montant de retrait nul ou negatif, montant positif attendu
+decouvert bernardino = 600Compte cheque no : 13 retrait : 300
+Nouveau solde : -600
+
+***Livrets***
+Compte numero : 2 Titulaire : Roberio Solde : 0
+interet = 3%
+solde min = 0euro
+Compte numero : 3 Titulaire : Elena Solde : 1600
+interet = 3%
+solde min = 1600euro
+Roberio interets = 0
+Elena interets = 48
+Compte numero : 3 Titulaire : Elena Solde : 1648
+solde min = 1648euro
+Exception : Operation non autorisee, montant du retrait superieur au solde 
+Exception : Montant de retrait nul ou negatif, montant positif attendu
+
+***PEL***
+Compte numero : 112 Titulaire : Samanta Solde : 0
+Compte no : 112 depot : 500
+Nouveau solde : 500
+Compte numero : 112 Titulaire : Samanta Solde : 500
+Compte numero : 2 Titulaire : Barbara Solde : 10000
+interet = 0%
+interet = 5%
+Barbara interets = 500
+Compte numero : 2 Titulaire : Barbara Solde : 10500
+Exception : PEL : retrait impossible, le montant du retrait doit etre egal au solde
+PEL no : 2 retrait : 10500
+Nouveau solde : 0
+Exception : Montant de depot nul ou negatif, montant positif attendu
+
+###MONEO###
+Moneo de Antonio solde max : 50 solde : 0
+Moneo de Claudine solde max : 90 solde : 90
+Moneo de Bernardino solde max : 100 solde : 0
+Compte cheque no : 12 retrait : 50
+Nouveau solde : 450
+Moneo du compte no : 12 recharge  : 50
+Nouveau solde : 50
+Compte no : 13 depot : 6000
+Nouveau solde : 5400
+Compte cheque no : 13 retrait : 100
+Nouveau solde : 5300
+Moneo du compte no : 13 recharge  : 100
+Nouveau solde : 100
+Moneo du compte no : 13 retrait : 50
+Nouveau solde : 50
+Compte cheque no : 13 retrait : 50
+Nouveau solde : 5250
+Moneo du compte no : 13 recharge  : 50
+Nouveau solde : 100
+Exception : Moneo : recharge impossible la carte est pleine
+
+###Virement###
+Compte cheque numero : 13 Titulaire : Bernardino Solde : 5250
+ Decouvert autorise : 600
+Compte cheque numero : 12 Titulaire : Antonio Solde : 450
+ Decouvert autorise : 0
+Compte cheque no : 13 retrait : 50
+Nouveau solde : 5200
+Compte no : 12 depot : 50
+Nouveau solde : 500
+Virement de  : 13 vers : 12
+Compte cheque numero : 13 Titulaire : Bernardino Solde : 5200
+ Decouvert autorise : 600
+Compte cheque numero : 12 Titulaire : Antonio Solde : 500
+ Decouvert autorise : 0

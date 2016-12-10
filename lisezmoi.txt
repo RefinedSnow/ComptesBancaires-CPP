@@ -1,0 +1,9 @@
+
+1.4/
+ici on définit un membre static à la fonction afin de créer une copie locale, à la classe, du taux d'intérêt afin de pouvoir modifier celui-ci.
+Une autre solution pourrait être de définir une autre proppriété membre du PEL qui ferait guise de coefficient pour recalculer le bon taux d'intérêt.
+
+2/ Le mot clé virtual est essentiel;
+En effet il nous permet de réecrire les fonctions concernées dans les classes filles.
+Il ests aussi nécessaire lors d'un passage par référence, notammement pour le virement.
+En effet puisqu'on lui passe le type compte il faut que dans les classe fille il fasse une conversion dynamique du type.
